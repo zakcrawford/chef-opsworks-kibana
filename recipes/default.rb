@@ -1,6 +1,6 @@
 include_recipe 'ohai' # work around missing node['ohai']['plugin_path']
 include_recipe 'nginx' # required otherwise missing nginx user
-include_recipe 'kibana::install'
+include_recipe 'kibana_lwrp::install'
 
 template "#{node['nginx']['dir']}/sites-available/kibana" do
   source node['kibana']['nginx']['template']
